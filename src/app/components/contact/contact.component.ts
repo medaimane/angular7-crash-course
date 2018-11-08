@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 
 @Component({
   selector: 'app-contact',
@@ -7,15 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  isblue: boolean = false;
+  contactForm: FormGroup;
+  submitted: boolean;
+  success: boolean;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { 
+    this.contactForm = this.formBuilder.group({
+        name: ['', Validators.required],
+        email: ['', Validators.required],
+        message: ['', Validators.required]
+    });
+  }
 
   ngOnInit() {
+    this.submitted = false;
+    this.success = false;
   }
 
-  blueText(){
-    this.isblue = !this.isblue;
+  onSubmit() {
+    this.submitted = true;
+
+    if(this.contactForm.invalid) {
+      return;
+    }
+
+    // Save to backend
+
+    this.success = true;
   }
 
+  removeNotice() {
+    this.success = false;
+  }
 }

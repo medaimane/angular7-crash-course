@@ -1,3 +1,23 @@
-<p>
-  about works!
+<h3 class="title">Binding class example</h3>
+
+<p class="buttons">
+  <a class="button" [ngClass]="{
+    'is-info': isblue,
+    'is-loading': !isblue
+  }">
+  Multiple class binding
+  </a>
+  
+  <a class="button" [class.is-link]="isblue" (click)="blueText()">Single class binding, Change Color</a>
+</p>
+
+<p [style.color]="isblue ? 'blue' : 'red'">
+  Single Style binding
+</p>
+
+<p [ngStyle]="{
+  'color': isblue ? 'blue' : 'red',
+  'font-size': isblue ? '20PX' : '30PX'
+}">
+  Multiple Style binding
 </p>

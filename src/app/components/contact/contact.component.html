@@ -1,24 +1,82 @@
-
-<h3 class="title">Binding class example</h3>
-
-<p class="buttons">
-  <a class="button" [ngClass]="{
-    'is-info': isblue,
-    'is-loading': !isblue
-  }">
-  Multiple class binding
-  </a>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   
-  <a class="button" [class.is-link]="isblue" (click)="blueText()">Single class binding, Change Color</a>
-</p>
+  <div *ngIf="success" class="field is-horizontal">
+    <div class="field-label">
+      <!-- Left empty for spacing -->
+    </div> 
+    <div class="field-body">
+        <div class="field"> 
+          <div class="notification is-success">
+              <button class="delete" (click)="removeNotice()"></button>
+              Thank You! Message send with <strong>Success</strong>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="field is-horizontal">
 
-<p [style.color]="isblue ? 'blue' : 'red'">
-  Single Style binding
-</p>
+    <div class="field-label is-normal">
+      <label class="label">Name</label>
+    </div>
+    
+    <div class="field-body">
+      <div class="field">
+        <p class="control is-expanded has-icons-left">
+          <input class="input" type="text" placeholder="Name" formControlName="name">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </p>
+        <div>
+            <p *ngIf="contactForm.controls.name.errors.required" class="help is-danger">
+              This field is required
+            </p>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control is-expanded has-icons-left has-icons-right">
+          <input class="input is-success" type="email" placeholder="Email" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+    </div>
 
-<p [ngStyle]="{
-  'color': isblue ? 'blue' : 'red',
-  'font-size': isblue ? '20PX' : '30PX'
-}">
-  Multiple Style binding
-</p>
+  </div>
+  
+  <div class="field is-horizontal">
+    
+    <div class="field-label is-normal">
+      <label class="label">Message</label>
+    </div>
+    
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <textarea class="textarea is-danger" placeholder="Explain how we can help you" required></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="field is-horizontal">
+    <div class="field-label">
+      <!-- Left empty for spacing -->
+    </div>
+    <div class="field-body">
+      <div class="field">
+        <div class="control">
+          <button type="submit" class="button is-primary">
+            Send message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

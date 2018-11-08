@@ -17,7 +17,6 @@ export class DataService {
   getUsers() {
     // Users from an public API : https://reqres.in/
     return this.http.get(`${this.url}/api/users?page=1`);
-
   }
 }
 
