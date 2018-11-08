@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  isblue: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  blueText(){
+    this.isblue = !this.isblue;
   }
 
 }

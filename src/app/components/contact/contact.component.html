@@ -1,3 +1,13 @@
-<p>
-  contact works!
+
+<h3 class="title">Binding class example</h3>
+
+<p class="buttons">
+  <a class="button" [ngClass]="{
+    'is-info': isblue,
+    'is-primary': !isblue
+  }">
+  Multiple class binding
+  </a>
+  
+  <a class="button" [class.is-link]="isblue" (click)="blueText()">Single class binding, Change Color</a>
 </p>
