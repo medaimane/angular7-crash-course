@@ -11,3 +11,14 @@
   
   <a class="button" [class.is-link]="isblue" (click)="blueText()">Single class binding, Change Color</a>
 </p>
+
+<p [style.color]="isblue ? 'blue' : 'red'">
+  Single Style binding
+</p>
+
+<p [ngStyle]="{
+  'color': isblue ? 'blue' : 'red',
+  'size': isblue ? '20PX' : '30PX'
+}">
+  Multiple Style binding
+</p>
