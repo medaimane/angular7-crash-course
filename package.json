@@ -1,6 +1,20 @@
 {
   "name": "ng7-crash-course",
   "version": "0.0.0",
+  "author": {
+    "name": "Mohamed Aimane Skhairi",
+    "email": "skhairimedaimae@gmail.com",
+    "url": "https://medaimane.github.io"
+  },
+  "description": "Angular 7 with Bulma-CSS simple app that cover different use cases",
+  "keywords": [
+    "Angular 7",
+    "Bulma CSS",
+    "Web",
+    "WebApps",
+    "Crash Course"
+  ],
+  "homepage": "https://medaimane.github.io/ng7bulma",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
