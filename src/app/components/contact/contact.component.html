@@ -1,6 +1,6 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   
-  <div *ngIf="success" class="field is-horizontal">
+  <div *ngIf="success" class="field is-horizontal"> 
     <div class="field-label">
       <!-- Left empty for spacing -->
     </div> 
@@ -21,30 +21,39 @@
     </div>
     
     <div class="field-body">
+      <!-- Name  -->
       <div class="field">
         <p class="control is-expanded has-icons-left">
-          <input class="input" type="text" placeholder="Name" formControlName="name">
+          <input class="input" type="text" formControlName="name" placeholder="Name" >
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
         </p>
-        <div>
-            <p *ngIf="contactForm.controls.name.errors.required" class="help is-danger">
-              This field is required
-            </p>
-        </div>
+        <span *ngIf="submitted && contactForm.controls.name.errors">
+          <span *ngIf="contactForm.controls.name.errors.required" class="help is-danger">
+            This name field is required
+          </span>
+        </span>
       </div>
+
+      <!-- Email -->
       <div class="field">
         <p class="control is-expanded has-icons-left has-icons-right">
-          <input class="input is-success" type="email" placeholder="Email" required>
+          <input class="input" type="email" formControlName="email" placeholder="Email" required> <!--is-success-->
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
-          <span class="icon is-small is-right">
+          <!-- <span class="icon is-small is-right">
             <i class="fas fa-check"></i>
-          </span>
+          </span> -->
         </p>
+        <span *ngIf="submitted && contactForm.controls.email.errors">
+          <span *ngIf="contactForm.controls.email.errors.required" class="help is-danger">
+            This email field is required
+          </span>
+        </span>
       </div>
+
     </div>
 
   </div>
@@ -55,11 +64,17 @@
       <label class="label">Message</label>
     </div>
     
+    <!-- Message -->
     <div class="field-body">
       <div class="field">
         <div class="control">
-          <textarea class="textarea is-danger" placeholder="Explain how we can help you" required></textarea>
+          <textarea class="textarea" formControlName="message" placeholder="Explain how we can help you" required></textarea> <!--is-danger-->
         </div>
+        <span *ngIf="submitted && contactForm.controls.message.errors">
+          <span *ngIf="contactForm.controls.message.errors.required" class="help is-danger">
+            This message field is required
+          </span>
+        </span>
       </div>
     </div>
 
