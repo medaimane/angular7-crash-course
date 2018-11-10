@@ -2,10 +2,7 @@
 
 ## Firebase Hosting instructions
 
-> Install the Firebase CLI
-> Firebase Init
-> Choose or Create a Firebase project
-> Firebase deploy
+> Install the Firebase CLI >> Firebase Init >> Config Steps >> Firebase deploy
 
 > [Demo](https://myfirebase-medaimane.firebaseapp.com/)
 
