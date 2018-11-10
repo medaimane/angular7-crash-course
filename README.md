@@ -1,5 +1,16 @@
 # Ng7CrashCourse
 
+## Firebase Hosting instructions
+
+> Install the Firebase CLI
+> Firebase Init
+> Choose or Create a Firebase project
+> Firebase deploy
+
+> [Demo](https://myfirebase-medaimane.firebaseapp.com/)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 > App Deployed : Current state of the project [angular7-crash-course](https://medaimane.github.io/angular7-crash-course/)
